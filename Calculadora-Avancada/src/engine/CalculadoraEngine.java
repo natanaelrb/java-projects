@@ -1,5 +1,6 @@
 // lógica dos cálculos
 
+// CalculadoraEngine.java
 package engine;
 
 public class CalculadoraEngine {
@@ -52,4 +53,3 @@ public class CalculadoraEngine {
         operadorAnterior = "";
     }
 }
-
