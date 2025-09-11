@@ -18,30 +18,45 @@ public class CalculadoraEngine {
     }
 
     public double calcular(double numeroAtual) {
-        valor2 = numeroAtual;
-        double resultado = 0;
+    valor2 = numeroAtual;
+    double resultado = 0;
 
-        if (operador.equals("%")) {
-            switch (operadorAnterior) {
-                case "+": resultado = valor1 + valor2; break;
-                case "-": resultado = valor1 - valor2; break;
-                case "x": resultado = valor1 * valor2; break;
-                case "÷": resultado = valor2 != 0 ? valor1 / valor2 : Double.POSITIVE_INFINITY; break;
-                default: resultado = valor2; break;
-            }
-        } else {
-            switch (operador) {
-                case "+": resultado = valor1 + valor2; break;
-                case "-": resultado = valor1 - valor2; break;
-                case "x": resultado = valor1 * valor2; break;
-                case "÷": resultado = valor2 != 0 ? valor1 / valor2 : Double.POSITIVE_INFINITY; break;
-                default: resultado = valor2; break;
-            }
+    if (operador.equals("%")) {
+        switch (operadorAnterior) {
+            case "+":
+                resultado = valor1 + (valor1 * valor2 / 100.0);
+                break;
+            case "-":
+                resultado = valor1 - (valor1 * valor2 / 100.0);
+                break;
+            case "x":
+                resultado = valor1 * (valor2 / 100.0);
+                break;
+            case "÷":
+                if (valor2 != 0) resultado = valor1 / (valor2 / 100.0);
+                else resultado = Double.POSITIVE_INFINITY;
+                break;
+            default:
+                resultado = valor2 / 100.0;
+                break;
         }
-
-        valor1 = resultado;
-        return resultado;
+    } else {
+        switch (operador) {
+            case "+": resultado = valor1 + valor2; break;
+            case "-": resultado = valor1 - valor2; break;
+            case "x": resultado = valor1 * valor2; break;
+            case "÷": 
+                if (valor2 != 0) resultado = valor1 / valor2; 
+                else resultado = Double.POSITIVE_INFINITY;
+                break;
+            default: resultado = valor2; break;
+        }
     }
+
+    valor1 = resultado;
+    return resultado;
+}
+
 
     public double getValor1() {
         return valor1;
