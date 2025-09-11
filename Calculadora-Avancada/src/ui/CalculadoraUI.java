@@ -1,5 +1,4 @@
 // Interface gráfica
-
 // CalculadoraUI.java
 package ui;
 
@@ -226,4 +225,5 @@ public class CalculadoraUI extends JFrame implements ActionListener {
         if (v == (long)v) return String.valueOf((long)v);
         else return String.valueOf(v);
     }
+
 }
