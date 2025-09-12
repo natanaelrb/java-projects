@@ -6,10 +6,9 @@ Aqui você encontra programas de console, POO e projetos maiores.
 ---
 
 ## 📂 Estrutura
-- `Calculadora-Anvaçada/` → Calculadora avançada em Java  
+- `calculadora-anvaçada/` → Calculadora avançada em Java  
 - `sistema-banco/` → simulação de sistema bancário  
 - `jogo-adivinhacao/` → jogo de adivinhação no console  
-
 ---
 
 ## 🛠️ Tecnologias utilizadas
